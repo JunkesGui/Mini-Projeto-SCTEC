@@ -2,15 +2,25 @@ namespace AutoCheckConsole
 {
     public class Moto : Veiculo
     {
-        private int Cilindradas {get; set;}
-        public Moto(string Marca, string Modelo, int Ano, int Quilometragem, List<ItemVistoria> VistoriaRealizada, int Cilindradas) : base(Marca, Modelo, Ano, Quilometragem, VistoriaRealizada)
+        public int Cilindradas { get; private set; }
+        public Moto(string marca, string modelo, int ano, int quilometragem, List<ItemVistoria> vistoriaRealizada, int cilindradas)
+            : base(marca, modelo, ano, quilometragem, vistoriaRealizada)
         {
-            this.Cilindradas = Cilindradas;
+            this.Cilindradas = cilindradas;
         }
 
-        public List<string> ObterChecklistObrigatório()
+        public override List<string> ObterChecklistObrigatorio()
         {
-            return ["Corrente", "Embreagem"];
+            List<string> checklist = base.ObterChecklistObrigatorio();
+            checklist.Add("Kit Transmissão/Corrente");
+            checklist.Add("Manetes de Freio/Embreagem");
+            checklist.Add("Pezinho Lateral");
+            return checklist;
+        }
+
+        public override string ObterTipo()
+        {
+            return "Moto";
         }
     }
 }
