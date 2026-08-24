@@ -2,14 +2,29 @@ namespace AutoCheckConsole
 {
     public class Caminhao : Veiculo
     {
-        private int QuantidadedeEixos {get; set;}
-        public Caminhao(string Marca, string Modelo, int Ano, int Quilometragem, List<ItemVistoria> VistoriaRealizada, int QuantidadedeEixos) : base(Marca, Modelo, Ano, Quilometragem, VistoriaRealizada)
+        public int QuantidadeEixos { get; private set; }
+        public double CapacidadeCargaToneladas { get; private set; }
+
+        public Caminhao(string marca, string modelo, int ano, int quilometragem, List<ItemVistoria> vistoriaRealizada,
+            int quantidadeEixos, double capacidadeCargaToneladas)
+            : base(marca, modelo, ano, quilometragem, vistoriaRealizada)
         {
-            this.QuantidadedeEixos = QuantidadedeEixos;
+            this.QuantidadeEixos = quantidadeEixos;
+            this.CapacidadeCargaToneladas = capacidadeCargaToneladas;
         }
-        public List<string> ObterChecklistObrigatório()
+
+        public override List<string> ObterChecklistObrigatorio()
         {
-            return ["Sistem hidraulico", "Lona da Caçamba"];
+            List<string> checklist = base.ObterChecklistObrigatorio();
+            checklist.Add("Tacógrafo");
+            checklist.Add("Sistema de Freios a Ar");
+            checklist.Add("Trava e Lona da Caçamba");
+            return checklist;
+        }
+
+        public override string ObterTipo()
+        {
+            return "Caminhão";
         }
     }
 }
