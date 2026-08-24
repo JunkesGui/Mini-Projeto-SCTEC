@@ -1,23 +1,32 @@
-public class ItemVistoria
+namespace AutoCheckConsole
 {
-    private string Nome;
-    private string Status;
-
-    public ItemVistoria(string nome, string status)
+    public class ItemVistoria
     {
-        Nome = nome;
-        Status = status;
-    }
+        private static readonly string[] StatusValidos = { "Bom", "Regular", "Ruim" };
+        public string Nome { get; }
+        public string Status { get; }
 
-    public string getNome()
-    {
-        string nome = Nome;
-        return nome;
-    }
+        public ItemVistoria(string nome, string status)
+        {
+            bool statusValido = false;
+            foreach (string statusPermitido in StatusValidos)
+            {
+                if (statusPermitido == status)
+                {
+                    statusValido = true;
+                    break;
+                }
+            }
 
-    public string getStatus()
-    {
-        string status = Status;
-        return status;
+            if (!statusValido)
+            {
+                throw new ArgumentException(
+                    $"Status inválido: '{status}'. Valores aceitos: \"Bom\", \"Regular\" ou \"Ruim\".",
+                    nameof(status));
+            }
+
+            this.Nome = nome;
+            this.Status = status;
+        }
     }
 }
