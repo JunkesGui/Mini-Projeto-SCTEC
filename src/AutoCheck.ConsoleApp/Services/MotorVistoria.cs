@@ -47,7 +47,6 @@ namespace AutoCheckConsole
                 pontuacaoObtida += pontosItem;
                 totalItens++;
 
-                // RF07 - separa itens críticos e itens de atenção
                 if (item.Status == "Ruim")
                 {
                     resultado.ItensCriticos.Add(item);
