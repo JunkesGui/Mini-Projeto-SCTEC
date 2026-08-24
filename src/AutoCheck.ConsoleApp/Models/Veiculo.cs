@@ -23,7 +23,7 @@ namespace AutoCheckConsole
 
         public virtual List<string> ObterChecklistObrigatorio()
         {
-            return ["Nível de óleo", "Documentação", "Extintor", "Calibração dos Pneus", "Sistema Elétrico"];
+            return ["Nível de óleo", "Documentação", "Calibração dos Pneus", "Sistema Elétrico"];
         } 
     }
 }
