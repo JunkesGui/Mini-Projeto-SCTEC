@@ -2,16 +2,26 @@ namespace AutoCheckConsole
 {
     public class Carro : Veiculo
     {
-        private int QuantidadedePortas {get; set;}
+        public int QuantidadePortas { get; private set; }
 
-        public Carro(string Marca, string Modelo, int Ano, int Quilometragem, List<ItemVistoria> VistoriaRealizada, int QuantidadedePortas) : base(Marca, Modelo, Ano, Quilometragem, VistoriaRealizada)
+        public Carro(string marca, string modelo, int ano, int quilometragem, List<ItemVistoria> vistoriaRealizada, int quantidadePortas)
+            : base(marca, modelo, ano, quilometragem, vistoriaRealizada)
         {
-            this.QuantidadedePortas = QuantidadedePortas;
+            this.QuantidadePortas = quantidadePortas;
         }
 
-        public List<string> ObterChecklistObrigatório()
+        public override List<string> ObterChecklistObrigatorio()
         {
-            return ["Estepe", "Extintor", "Freios"];
+            List<string> checklist = base.ObterChecklistObrigatorio();
+            checklist.Add("Estepe e Macaco");
+            checklist.Add("Triângulo de Sinalização");
+            checklist.Add("Ar Condicionado Funcional");
+            return checklist;
+        }
+
+        public override string ObterTipo()
+        {
+            return "Carro";
         }
     }
 }

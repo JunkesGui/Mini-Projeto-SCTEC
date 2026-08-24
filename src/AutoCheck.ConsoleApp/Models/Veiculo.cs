@@ -14,7 +14,7 @@ namespace AutoCheckConsole
             this.Modelo = modelo;
             this.Ano = ano;
             this.Quilometragem = quilometragem;
-            this.VistoriaRealizada = vistoriaRealizada ?? new List<ItemVistoria>();
+            this.VistoriaRealizada = vistoriaRealizada;
         }
 
         public void AdicionarItemVistoriado(string nome, string status)
