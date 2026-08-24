@@ -2,7 +2,7 @@ namespace AutoCheckConsole
 {
     public class ItemVistoria
     {
-        private static readonly string[] StatusValidos = { "Bom", "Regular", "Ruim" };
+        private static readonly string[] StatusValidos = { "bom", "regular", "ruim" };
         public string Nome { get; }
         public string Status { get; }
 

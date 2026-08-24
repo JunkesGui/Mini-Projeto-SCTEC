@@ -18,15 +18,15 @@ namespace AutoCheckConsole
         {
             int pontos = 0;
 
-            if (status == "Bom")
+            if (status == "bom")
             {
                 pontos = 10;
             }
-            else if (status == "Regular")
+            else if (status == "regular")
             {
                 pontos = 5;
             }
-            else if (status == "Ruim")
+            else if (status == "ruim")
             {
                 pontos = 0;
             }

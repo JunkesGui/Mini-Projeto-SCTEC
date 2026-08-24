@@ -47,7 +47,6 @@ string LerTexto(string mensagem)
     return texto;
 }
 
-// Garante que o usuário só consiga digitar um dos três status aceitos pelo RF01.
 string LerStatus(string nomeItem)
 {
     while (true)
@@ -55,9 +54,9 @@ string LerStatus(string nomeItem)
         Console.Write($"Status do item \"{nomeItem}\" (Bom / Regular / Ruim): ");
         string status = Console.ReadLine() ?? "";
 
-        if (status == "Bom" || status == "Regular" || status == "Ruim")
+        if (status.ToLower() == "bom" || status.ToLower() == "regular" || status.ToLower() == "ruim")
         {
-            return status;
+            return status.ToLower();
         }
 
         Console.WriteLine("Status inválido. Aceito apenas: Bom, Regular ou Ruim.");
