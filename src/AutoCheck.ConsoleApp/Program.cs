@@ -109,6 +109,7 @@ void ExibirRelatorio(Veiculo veiculo, ResultadoVistoria resultado)
     Console.WriteLine($"Marca/Modelo:    {veiculo.Marca} {veiculo.Modelo}");
     Console.WriteLine($"Ano:             {veiculo.Ano}");
     Console.WriteLine($"Quilometragem:   {veiculo.Quilometragem} km");
+    Console.WriteLine(veiculo.ObterDadosEspecificos());
     Console.WriteLine("---------------------------------------------------");
     Console.WriteLine("Itens Vistoriados:");
 

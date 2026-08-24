@@ -26,5 +26,10 @@ namespace AutoCheckConsole
         {
             return "Caminhão";
         }
+
+        public override string ObterDadosEspecificos()
+        {
+            return $"Quantidade de Eixos: {this.QuantidadeEixos} | Capacidade de Carga: {this.CapacidadeCargaToneladas} ton";
+        }
     }
 }

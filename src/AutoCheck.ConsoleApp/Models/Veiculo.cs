@@ -37,5 +37,10 @@ namespace AutoCheckConsole
         {
             return "Veículo";
         }
+
+        public virtual string ObterDadosEspecificos()
+        {
+            return string.Empty;
+        }
     }
 }

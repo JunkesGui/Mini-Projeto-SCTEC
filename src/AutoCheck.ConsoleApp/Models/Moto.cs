@@ -22,5 +22,10 @@ namespace AutoCheckConsole
         {
             return "Moto";
         }
+
+        public override string ObterDadosEspecificos()
+        {
+            return $"Cilindradas: {this.Cilindradas}cc";
+        }
     }
 }

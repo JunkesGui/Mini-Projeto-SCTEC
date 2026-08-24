@@ -23,5 +23,10 @@ namespace AutoCheckConsole
         {
             return "Carro";
         }
+
+        public override string ObterDadosEspecificos()
+        {
+            return $"Quantidade de Portas: {this.QuantidadePortas}";
+        }
     }
 }
